@@ -85,7 +85,8 @@ DJISDKNode::initVehicle(ros::NodeHandle& nh_private)
   bool enable_advanced_sensing = false;
 
 #ifdef ADVANCED_SENSING
-  enable_advanced_sensing = true;
+  // enable_advanced_sensing = true;
+  enable_advanced_sensing = false; // Julen Hack: I do not know why but without being activated the M210 flag in the OSDK compilation, the code entered here and gave some run problems. Changing the flag to false make it work
   ROS_INFO("Advanced Sensing is Enabled on M210.");
 #endif
 
