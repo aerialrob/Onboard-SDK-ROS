@@ -88,7 +88,7 @@ DJISDKNode::initVehicle(ros::NodeHandle& nh_private)
   bool enable_advanced_sensing = false;
 
 #ifdef ADVANCED_SENSING
-  enable_advanced_sensing = true;
+  enable_advanced_sensing = false;
   ROS_INFO("Advanced Sensing is Enabled on M210.");
 #endif
 
@@ -210,6 +210,7 @@ DJISDKNode::activate(int l_app_id, std::string l_enc_key)
   testActivateData.ID = l_app_id;
 
   ROS_DEBUG("called vehicle->activate(&testActivateData, WAIT_TIMEOUT)");
+
   return vehicle->activate(&testActivateData, WAIT_TIMEOUT);
 }
 
